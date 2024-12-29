@@ -8,6 +8,7 @@ app.use(express.json())
 
 app.post('/video-details', async(req, res) => {
     const { url } = req.body;
+    console.log('URL recebida: ', url)
     if (!ytdl.validateURL(url)){
         return res.status(400).send({ error: 'URL inválida!' })
     }
