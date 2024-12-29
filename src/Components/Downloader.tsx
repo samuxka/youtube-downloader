@@ -12,6 +12,7 @@ const Downloader: React.FC = () => {
         try {
             setLoading(true);
             const details = await fetchVideoDetails(url)
+            setVideoDetails(details)
             toast.success('Detalhes do vídeo obtidos!')
         } catch (error) {
             toast.error('Erro ao buscar os detalhes do vídeo.')
